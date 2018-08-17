@@ -100,9 +100,9 @@ app.get('/table',function(req,res){
 	con.query("SELECT `s_id`, `student_name`,`roll_number` FROM `student_info`", function (error, result) {
 		console.log(result);
 	  		res.render('./pages/table.ejs',{
-	  			items : result 
+	  			items : result
 	  		});
-	});	
+	});
 });
 app.get('/details',function(req,res){
 	con.query('SELECT * FROM student_info WHERE s_id = ?',req.params.id, function (error, results) {
