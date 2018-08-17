@@ -1,0 +1,28 @@
+{
+  "name": "school-management-system",
+  "version": "1.0.0",
+  "description": "It is an app for storing all data of a student,teacher,employee.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "school"
+  ],
+  "author": "Utshab Technologies",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-partials": "^0.3.0",
+    "font-awesome": "^4.7.0",
+    "fontawesome": "^4.7.2",
+    "jquery": "^3.3.1",
+    "mysql": "^2.15.0",
+    "tether": "^1.4.4"
+  }
+}
