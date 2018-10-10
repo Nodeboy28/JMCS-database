@@ -35,9 +35,9 @@ app.use('/vendor', express.static(__dirname + "/vendor"));
 
 const baseURL="http://127.0.0.1:8080";
 const con = mysql.createConnection({
-  host     : 'localhost',
+  host     : 'http://138.201.49.53',
   user     : 'root',
-  password : '',
+  password : '*utl488288#',
   database : 'my_db'
 });
 con.connect(console.log('database connected'));
