@@ -33,7 +33,7 @@ app.use('/public', express.static(__dirname + "/public"));
 app.use('/vendor', express.static(__dirname + "/vendor"));
 
 
-const baseURL="http://127.0.0.1:8080";
+app.set('port', (process.env.PORT || 5000))
 const con = mysql.createConnection({
   host     : 'http://138.201.49.53',
   user     : 'root',
@@ -111,5 +111,6 @@ app.get('/details',function(req,res){
 	});
 	res.render('./pages/details.ejs');
 });
-app.listen(8080);
-console.log('you are on server 8080');
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
