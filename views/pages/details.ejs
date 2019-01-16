@@ -18,44 +18,45 @@
                                 <div class="card-body card-block">
                                 	<div class="row">
                                 		<div class="col col-lg-4">
-                                		<img src="public/assets/image/icon/avatar-05.jpg">
+                                			
+                                		<img src="../<%= item[0].Stdnt_image %>" style="width: 100px; height: 100px;">
 		                            	</div>
 		                            	<div class="col col-lg-8">
 		                            		<h3 style="background-color:#263238; color: #FFFFFF;padding: 10px;" >Student Information</h3>
-		                            		<p style="margin-bottom: 10px;"><strong>Student Name: </strong> hasnath rahman</p>
-		                            		<p style="margin-bottom: 10px;"><strong>Blood Group: </strong> </p>
-		                            		<p style="margin-bottom: 10px;"><strong>Birth Date: </strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Telephone Number Of Student: </strong></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Student Name: </strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Blood Group: </strong> <%= item[0].blood_group %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Birth Date: </strong> <%= item[0].d_birth %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Telephone Number Of Student: </strong><%= item[0].tel_number %></p>
 		                            		<h3 style="background-color:#263238; color: #FFFFFF;padding: 10px;" >Guardian Information</h3>
-		                            		<p style="margin-bottom: 10px;"><strong>Father Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Mother Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Father Occupation:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Mother Occupation:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Father Yearly income:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Local Guardian Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Guardian Mobile Number:</strong></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Father Name:</strong><%= item[0].father_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Mother Name:</strong><%= item[0].mother_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Father Occupation:</strong><%= item[0].f_occupation %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Mother Occupation:</strong><%= item[0].m_occupation %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Father Yearly income:</strong><%= item[0].f_income %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Local Guardian Name:</strong><%= item[0].g_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Guardian Mobile Number:</strong><%= item[0].g_tel %></p>
 		                            		<h3 style="background-color:#263238; color: #FFFFFF;padding: 10px;" >Permanant Address</h3>
-		                            		<p style="margin-bottom: 10px;"><strong>Village/Colony Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Street Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Post Code:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Thana Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Telephone Number:</strong></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Village/Colony Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Street Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Post Code:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Thana Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Telephone Number:</strong><%= item[0].student_name %></p>
 		                            		<h3 style="background-color:#263238; color: #FFFFFF;padding: 10px;">Present Address</h3>
-		                            		<p style="margin-bottom: 10px;"><strong>Village/Colony Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Street Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Post Code:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>District:</strong></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Village/Colony Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Street Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Post Code:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>District:</strong><%= item[0].student_name %></p>
 		                            		<h3 style="background-color:#263238; color: #FFFFFF;padding: 10px;">Examination Name</h3>
-		                            		<p style="margin-bottom: 10px;"><strong>Exam Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Department:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Board Name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Institute name:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Roll Number:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Session:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Examination center:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Passing Year:</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Total Number/GPA(Without 4th Subject):</strong></p>
-		                            		<p style="margin-bottom: 10px;"><strong>Total Number/GPA(With 4th Subject):</strong></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Exam Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Department:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Board Name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Institute name:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Roll Number:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Session:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Examination center:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Passing Year:</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Total Number/GPA(Without 4th Subject):</strong><%= item[0].student_name %></p>
+		                            		<p style="margin-bottom: 10px;"><strong>Total Number/GPA(With 4th Subject):</strong><%= item[0].student_name %></p>
 		                            	</div>
                                 		
                                 	</div>

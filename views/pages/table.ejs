@@ -28,8 +28,8 @@
                                                 <td><%= item.student_name %></td>
                                                 <td><%= item.roll_number %></td>
                                                 <td>
-                                                    <a href="details" class="btn btn-success">Details</a>
-                                                    <a href="" class="btn btn-danger">Delete</a>
+                                                    <a href="<%= item.s_id %>" class="btn btn-success">Details</a>
+                                                    <a href="/pages/delete/<%= item.s_id %>" class="btn btn-danger">Delete</a>
                                                 </td>  
                                             </tr>
                                             <% }); %>

@@ -9,7 +9,32 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <form action="http://127.0.0.1:8080/form" method="post" novalidate="novalidate">
+                        <!-- Changed it to localhost -->
+                        <form action="http://127.0.0.1:5000/form" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                            <!-- new change -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            
+                                            <small>Choose</small>
+                                            <strong>Form</strong>
+                                        </div>
+                                        <div class="card-body card-block">
+                                                <label for="department_name" class="control-label mb-1">Department</label>
+                                                <select name="form_details" id="Form_Details" class="form-control mb-1">
+                                                    <option value="" selected="" disabled>Please select</option>
+                                                    <option value="Intermediate">Intermediate</option>
+                                                    <option value="Honours">Honours</option>
+                                                    <option value="Masters">Masters</option>
+                                                    <option value="Degree">Degree</option>
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of new change -->
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="card">
@@ -40,7 +65,7 @@
                                                     <label for="Birth_date" class="control-label mb-1">Birth Date</label>
                                                     <input id="Birth_date" name="d_birth" type="date" class="form-control valid" placeholder="Enter Birth date ">
                                                      <label for="Religion" class="control-label mb-1">Religion</label>
-                                                     <select name="religion" id="Religion" class="form-control mb-1">
+                                                    <select name="religion" id="Religion" class="form-control mb-1">
                                                         <option value="" selected="" disabled>Please select</option>
                                                         <option value="Hindu">Hindu</option>
                                                         <option value="Muslim">Muslim</option>
@@ -50,6 +75,23 @@
                                                         
                                                     </select>
                                                     
+                                                    
+                                                    
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col col-md-4">
+                                                        <label class=" form-control-label">Maritial Status</label>
+                                                    </div>
+                                                    <div class="col col-md-8">
+                                                        <div class="form-check-inline form-check">
+                                                            <label for="inline-radio1" class="form-check-label mr-1">
+                                                                <input type="radio" name="maritial_status" value="Married">Married
+                                                            </label>
+                                                            <label for="inline-radio2" class="form-check-label ">
+                                                                <input type="radio" name="maritial_status" value="Unmarried">Unmarried
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="Tel_number" class="control-label mb-1">Telephone Number Of Student</label>
@@ -60,7 +102,7 @@
                                                        <label for="file-input" class=" form-control-label">File input</label>
                                                    </div>
                                                    <div class="col-12 col-md-9">
-                                                       <input type="file" id="files" name="image" class="form-control-file">
+                                                       <input type="file" id="files" name="Stdnt_image" class="form-control-file">
                                                        <output id="list" style="width: 100px;height: 100px;"></output>
                                                    </div>
                                                </div>
@@ -94,20 +136,21 @@
                                                             <input name="m_occupation" type="text" id="mother_occupation" placeholder="Enter Mother Occupation" class="form-control">
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                <div class="col-12">
                                                         <div class="form-group">
                                                             <label for="f_income" class=" form-control-label">Father Yearly income</label>
                                                             <input name="f_income" type="number" id="f_income" placeholder="Enter  Father's Yearly Income" class="form-control">
                                                         </div>
-                                                        <div class="col-12">
-                                                        <div class="form-group">
-                                                            <label for="g_tel" class=" form-control-label">Guardian Mobile Number</label>
-                                                            <input name="g_tel" type="text" id="g_tel" placeholder="Enter  Guardian Mobile Number" class="form-control" value="+880">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="g_name" class=" form-control-label">Local Guardian Name(Optional)</label>
-                                                            <input name="g_name" type="text" id="g_name" placeholder="Enter Local  Guardian Name" class="form-control" value="">
-                                                        </div>
+                                                    
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="g_tel" class=" form-control-label">Guardian Mobile Number</label>
+                                                        <input name="g_tel" type="text" id="g_tel" placeholder="Enter  Guardian Mobile Number" class="form-control" value="+880">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="g_name" class=" form-control-label">Local Guardian Name(Optional)</label>
+                                                        <input name="g_name" type="text" id="g_name" placeholder="Enter Local  Guardian Name" class="form-control" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,11 +219,26 @@
                                             <div class="card-body card-block">
                                                 <div class="form-group">
                                                     <label for="Exam" class="control-label mb-1">Exam Name</label>
-                                                    <input id="Exam" name="exam_name" type="text" class="form-control"placeholder="Exam Name">
+                                                    <!-- <input id="Exam" name="exam_name" type="text" class="form-control"placeholder="Exam Name"> -->
+                                                    <select name="exam_name" id="Exam" class="form-control mb-1">
+                                                        <option value="" selected="" disabled>Please select</option>
+                                                        <option value="SSC">Secondary School Certificate</option>
+                                                        <option value="HSC">Higher Secondary Certificate</option>
+                                                        <option value="Degree">Degree</option>
+                                                        <option value="BSC">Bachelor of Science</option>
+                                                        
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="Department" class="control-label mb-1">Department</label>
-                                                    <input id="Department" name="department" type="text" class="form-control valid" placeholder="Enter Department Name">
+                                                    <label for="Department" class="control-label mb-1">Subject</label>
+                                                    <!-- <input id="Department" name="department" type="text" class="form-control valid" placeholder="Enter Department Name"> -->
+                                                    <select name="department" id="Department" class="form-control mb-1">
+                                                        <option value="" selected="" disabled>Please select</option>
+                                                        <option value="Science">Science</option>
+                                                        <option value="Arts">Arts</option>
+                                                        <option value="Commerce">Commerce</option>
+                                                        
+                                                    </select>
                                                     <label for="board_name" class="control-label mb-1">Board Name</label>
                                                     <select name="board_name" id="board_name" class="form-control mb-1">
                                                         <option value="" selected="" disabled>Please select</option>
@@ -202,11 +260,26 @@
                                                     <select name="session" id="Session" class="form-control mb-1">
                                                         <option value="" selected="" disabled>Please select</option>
                                                         <option value="2013-14">2013-14</option>
+                                                        <option value="2015-16">2015-16</option>
+                                                        <option value="2017-18">2017-18</option>
+ 
                                                     </select>
                                                     <label for="exam_center" class="control-label mb-1">Examination center</label>
                                                     <input id="exam_center" name="exam_center" type="text" class="form-control valid"  placeholder="Enter examination center">
                                                     <label for="Passing_year" class="control-label mb-1">Passing Year</label>
-                                                    <input id="Passing_year" name="passing_year" type="date" class="form-control valid" placeholder="Enter Passing Year">
+                                                    
+                                                    <select name="passing_year" id="Passing_year" class="form-control mb-1">
+                                                        <option value="" selected="" disabled>Please select</option>
+                                                        <script type="text/javascript">
+                                                            var myDate = new Date();
+                                                            var Year = myDate.getFullYear();
+                                                            for (var i = 1990; i<=Year; i++) {
+                                                                document.write('<option value="'+i+'">'+i+'</option>');
+                                                            }
+                                                        </script>
+                                                    
+                                                    </select>
+                                                    
                                                     <label for="gpa" class="control-label mb-1">Total Number/GPA(Without 4th Subject)</label>
                                                     <input id="gpa" name="gpa_number" type="number" class="form-control valid"  placeholder="Enter Total Number(Without 4th Subject)" min="0.00" max="4.01" step="0.10" value="0.00">
                                                     <label for="with_gpa" class="control-label mb-1"><b>Total Number/GPA(With 4th Subject)</b></label>

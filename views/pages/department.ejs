@@ -1,0 +1,76 @@
+<% include ../partials/header.ejs %>
+	<div class="page-wrapper">
+            <% include ../partials/sidenav.ejs %>
+        <!-- PAGE CONTAINER-->
+        <div class="page-container2">
+            <% include ../partials/topnav.ejs %>
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <!-- Changed it to localhost -->
+                        <form action="http://127.0.0.1:5000/department" method="post" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            
+                                            <small> Add New</small>
+                                            <strong>Department</strong>
+                                        </div>
+                                        <div class="card-body card-block">
+                                                <label for="department_name" class="control-label mb-1">Department</label>
+                                                <input id="department_name" name="department_name" type="text" class="form-control"  placeholder="Enter New Deparment">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            <i class="fa fa-dot-circle-o"></i> Add
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-lg" onclick="window.location.reload()">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+                                    </div>
+
+                        </form>
+                        <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <% if(items.length > 0){ %>
+                                        <thead>
+                                            <tr>
+                                                <th>SL</th>
+                                                <th>Department Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% items.forEach(function(item,table){ %>
+                                            <tr>
+                                                <td><%= table+1 %></td>
+                                                <td><%= item.department_name %></td>
+                                                <td>
+                                                    <a href="/department/delete/<%= item.id %>" class="btn btn-danger">Delete</a>
+                                                </td> 
+                                            </tr>
+                                            <% }); %>
+                                        </tbody>
+                                    </table>
+                                    <% }else{ %>
+                                    <p><strong>There is no element in the database</strong></p>
+                                    <% } %>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="copyright">
+                                            <p>Copyright © 2018 Utshab. All rights reserved. Template by <a href="https://colorlib.com">Utshab</a>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+                </div>
+            </div>                                                                                                
+  <% include ../partials/footer.ejs %>     
