@@ -5,6 +5,8 @@
         <div class="page-container2">
             <% include ../partials/topnav.ejs %>
 
+            
+            
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -21,13 +23,14 @@
                                         </div>
                                         <div class="card-body card-block">
                                                 <label for="department_name" class="control-label mb-1">Department</label>
-                                                <input id="department_name" name="department_name" type="text" class="form-control"  placeholder="Enter New Deparment">
+                                                <input id="department_name" name="department_name" type="text" class="form-control"  placeholder="Enter New Deparment" required="true">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                     <div class="card-body">
-                                        <button type="submit" class="btn btn-primary btn-lg">
+                                        <button type="submit" class="btn btn-primary btn-lg" onclick="">
                                             <i class="fa fa-dot-circle-o"></i> Add
                                         </button>
                                         <button type="reset" class="btn btn-danger btn-lg" onclick="window.location.reload()">
@@ -35,7 +38,9 @@
                                         </button>
                                     </div>
 
+
                         </form>
+
                         <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
                                         <% if(items.length > 0){ %>
@@ -52,7 +57,7 @@
                                                 <td><%= table+1 %></td>
                                                 <td><%= item.department_name %></td>
                                                 <td>
-                                                    <a href="/department/delete/<%= item.id %>" class="btn btn-danger">Delete</a>
+                                                    <a href="/department/delete/<%= item.id %>" class="btn btn-danger" onclick="return alert(Are you sure?);" >Delete</a>
                                                 </td> 
                                             </tr>
                                             <% }); %>
@@ -70,7 +75,10 @@
                                     </div>
                                 </div>
 
+
                     </div>
                 </div>
-            </div>                                                                                                
+            </div>
+            
+            
   <% include ../partials/footer.ejs %>     

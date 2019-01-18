@@ -2,8 +2,10 @@ var express = require('express');
 var http = require('http');
 var mysql = require('mysql');
 var app = express();
+var swal = require('sweetalert');
 var bodyParser = require('body-parser');
 var multer = require('multer');
+const con = require('./config/dbConnect');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads');
@@ -26,7 +28,7 @@ var upload = multer({ storage: storage, fileFilter: fileFilter });
 /**
 	parse all data
 **/
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 /**
 	used for date format
 **/
@@ -41,6 +43,9 @@ app.set('view enjine', 'ejs');
 	used for date format
 **/
 app.use('/js', express.static(__dirname+ '/node_modules/bootstrap/dist/js'));
+app.use('/node_modules', express.static(__dirname+ '/node_modules'));
+app.use('/js', express.static(__dirname+ '/vendor/perfect-scrollbar'));
+app.use('/css', express.static(__dirname+ '/vendor/perfect-scrollbar'));
 app.use('/css', express.static(__dirname+ '/node_modules/bootstrap/dist/css'));
 app.use('/js', express.static(__dirname+ '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname+ '/node_modules/tether/dist/js'));
@@ -51,13 +56,7 @@ app.use('/public', express.static(__dirname + "/public"));
 app.use('/vendor', express.static(__dirname + "/vendor"));
 app.use('/uploads', express.static('uploads'));
 app.set('port', (process.env.PORT || 5000))
-const con = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'my_db'
-});
-con.connect(console.log('database connected'));
+
 
 app.get('/',function(req,res){
 	con.query('SELECT * FROM student_info', function (error, results) {
@@ -66,7 +65,11 @@ app.get('/',function(req,res){
 	});
 	res.render('./pages/index.ejs');
 });
+app.get('/login',function(req,res){
+	res.render('./pages/login.ejs');
+});
 app.get('/department',function(req,res){
+
 	con.query("SELECT * FROM department", function (error, result) {
 	  		res.render('./pages/department.ejs',{
 	  			items : result
@@ -74,6 +77,8 @@ app.get('/department',function(req,res){
 	});
 });
 app.get('/department/delete/:id',function(req,res){
+	
+
 	con.query('DELETE FROM department WHERE id = ?',req.params.id,function(error,results){
 		if(error) throw error;
 
@@ -99,7 +104,7 @@ app.post('/department',function(req,res){
 app.get('/form',function(req,res){
 	res.render('./pages/form.ejs');
 });
-app.post('/form',upload.single('Stdnt_image'),function(req,res){
+app.post('/form',upload.single('stdntImage'),function(req,res){
 	 console.log(req.file);
 	var insertEventData = {
 				s_id:req.body.s_id,
@@ -110,7 +115,7 @@ app.post('/form',upload.single('Stdnt_image'),function(req,res){
 				religion:req.body.religion,
 				maritial_status:req.body.maritial_status,
 				tel_number:req.body.tel_number,
-				Stdnt_image: req.file.path,
+				stdntImage: req.file.path,
 				father_name:req.body.father_name,
 				mother_name:req.body.mother_name,
 				f_occupation:req.body.f_occupation,
@@ -154,7 +159,7 @@ app.get('/table',function(req,res){
 	});
 });
 app.get('/:id',function(req,res){
-	con.query('SELECT * FROM student_info WHERE s_id = ?',[req.params.id], function (error, results) {
+	con.query('SELECT * FROM student_info WHERE s_id = ?',req.params.id, function (error, results) {
 	  if (error) throw error;
 	  
 	  res.render('./pages/details.ejs',{
@@ -173,6 +178,7 @@ app.get('/pages/delete/:id',function(req,res){
 	});
 	res.redirect('/table');
 });
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
